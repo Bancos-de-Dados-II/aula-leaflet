@@ -53,7 +53,11 @@
         botao.addEventListener('click', ()=>{
             fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${input.value}`)
                 .then(response => response.json())
-                .then(data => console.log(data[0]))
+                .then(data => {
+                    const center = [data[0].lat, data[0].lon];
+                    marker.setLatLng(center);
+                    map.setView(center, 15);
+                })
         });
 
     </script>
