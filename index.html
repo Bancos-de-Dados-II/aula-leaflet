@@ -31,7 +31,7 @@
         let marker = L.marker(center,{
             draggable:true,
             icon: L.icon({
-                iconUrl: 'https://cdn-icons-png.flaticon.com/512/504/504276.png',
+                iconUrl: 'https://static.vecteezy.com/system/resources/thumbnails/014/391/893/small/home-icon-isolated-on-transparent-background-black-symbol-for-your-design-free-png.png',
                 iconSize: [36, 36]
             })
         }).addTo(map);
@@ -46,6 +46,10 @@
         map.on('locationfound', e=>{
             marker.setLatLng(e.latlng);
         });
+
+        map.on('click', e=>{
+            marker.setLatLng(e.latlng);
+        })
 
         const botao = document.getElementById('btn-buscar');
         const input = document.getElementById('input-local');
