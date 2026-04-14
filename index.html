@@ -70,6 +70,25 @@
                 })
         });
 
+        const botaoSalvar = document.getElementById('btn-salvar');
+        const inputEmail = document.getElementById('input-email');
+        const inputNome = document.getElementById('input-nome');
+
+        botaoSalvar.addEventListener('click', ()=>{
+            const usuario = {
+                nome: inputNome.value,
+                email: inputEmail.value,
+                localizacao: {
+                    type: "Point",
+                    coordinates: [
+                        marker.getLatLng().lng,
+                        marker.getLatLng().lat
+                    ]
+                }
+            }
+        });
+
+
     </script>
 
 </body>
